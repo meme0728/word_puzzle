@@ -69,6 +69,22 @@ main {
   margin: 5px 0;
 }
 
+.progress-area {
+  background-color: #e8f7f0;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: 1px solid #c5e8d8;
+}
+
+.progress-area p {
+  margin: 0;
+  font-size: 16px;
+  color: #27ae60;
+  font-weight: bold;
+}
+
 .message {
   color: #d35400;
   font-weight: bold;
