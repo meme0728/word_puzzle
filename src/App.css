@@ -151,6 +151,8 @@ button:disabled {
   background: #fff;
   border: 2px solid #333;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .board-row {
@@ -178,6 +180,43 @@ button:disabled {
   background-color: #3498db;
   color: white;
   transform: scale(0.95);
+}
+
+/* パネルが弾ける時のアニメーション */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.board-cell.popping {
+  animation: pop 0.5s ease-out forwards;
+  background-color: #f39c12;
+  color: white;
+  z-index: 10;
+}
+
+/* パネルが落ちる時のアニメーション */
+@keyframes drop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.game-board.animating .board-cell:not(.popping) {
+  animation: drop 0.5s ease-in-out;
 }
 
 @media (max-width: 600px) {
